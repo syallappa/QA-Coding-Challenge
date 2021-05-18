@@ -10,6 +10,27 @@ context("todo tests", () => {
   });
   // write remaining tests here
 
+  describe("Todo not visible in complete", () => {
+    it("when clicked on complete link todo Take the dog for a walk should not visible" , () => {
+      cy.contains("Active").click()
+      cy.get(".selected")
+      cy.contains("Take the dog for a walk").should('be.visible')
+      cy.contains("Completed").click()
+      cy.contains("Take the dog for a walk").should('not.be.visible')
+    });  
+  });
+  describe("Deleting Todo", () => {
+  it("Deleting a Todo", () => {
+    cy.visitTodos()
+    cy.get(".view > label").click()
+    cy.get('.destroy').click({force: true})
+    
+    cy.wait(1000)
+    
+    //cy.get("button#destroy").click()
+    //cy.contains("Take the dog for a walk").should('not.be.visible')
+  }); 
+}); 
   //clear completed appears
   describe("ClearCompleted", () => {
     it("When atleast one task is completed, it should show clear completed button", () => {
@@ -19,7 +40,7 @@ context("todo tests", () => {
  
      });
     });
-
+    
   //Active
   describe("IsActive", () => {
     it("When completed is clicked,s hould show only active ones", () => {
