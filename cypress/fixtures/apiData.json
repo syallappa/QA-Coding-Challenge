@@ -1,0 +1,22 @@
+{
+    "baseUrl": "http://todo-backend-typescript.herokuapp.com",
+    "postData": {
+        "title": "Can I get a pet?",
+        "order": 1,
+        "completed": false,
+        "url": "/"
+    },
+    "putData": {
+        "title": "Can I get a pet?",
+        "order": 1,
+        "completed": true,
+        "url": "/1"
+    },
+    "GetData": {
+        "url": "/"
+    },
+    "daleteData": {
+        "order": 1,
+        "url": "/"
+    }
+}
